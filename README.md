@@ -78,28 +78,21 @@ $ sail artisan migrate:refresh --seed
 以下のページへアクセスして問題なければ構築成功
 
 - laravel_app: http://localhost
-- phpmyadmin: http://localhost:33060
-- Staffログイン情報
-
-```
-ID(mail)：staff@sample.com
-Password：password
-```
 
 # PHPUnitテスト環境用DB作成
 
 - mysqlへログイン
 
 ```
-$ docker exec -it keebo_mysql_1 /bin/bash -c 'mysql -h 127.0.0.1 -u root -p'
+$ docker exec -it {starterkit-laravel-vue-inertia}_mysql_1 /bin/bash -c 'mysql -h 127.0.0.1 -u root -p'
 ```
 パスワードを求められるので、```password```と入力する
 
 - create databaseのSQLでテスト用DB作成
 
 ```mysql
-mysql $ CREATE DATABASE keebo_test DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-mysql $ grant ALL PRIVILEGES on keebo_test.* to 'sail'@'%';
+mysql $ CREATE DATABASE {starterkit-laravel-vue-inertia}_test DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+mysql $ grant ALL PRIVILEGES on {starterkit-laravel-vue-inertia}_test.* to 'sail'@'%';
 ```
 
 - test用Key作成
